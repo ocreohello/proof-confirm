@@ -6,46 +6,46 @@
 <title>확정 화면 세금계산서</title>
 <style>
 :root{
-  --text:#191f28; --sub:#6b7684; --line:#e5e8eb; --bg:#f5f6f7; --gray:#f2f4f6; --blue:#3182f6; --blue-soft:#e8f3ff;
-  --red:#f04452; --black:#111; --spec:#7a3cff; --spec-soft:#f5f0ff;
+  --text:#000000; --sub:#666666; --line:#F0F0F0; --bg:#F7F7F7; --gray:#F5F5F5; --blue:#308CF7; --blue-soft:rgba(48,140,247,.07);
+  --red:#FF003D; --black:#000000; --spec:#7a3cff; --spec-soft:#f5f0ff;
 }
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Pretendard","Apple SD Gothic Neo","Noto Sans KR",sans-serif;font-size:14px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'NanumSquare Neo',-apple-system,'Apple SD Gothic Neo',sans-serif;font-size:14px}
 button,input{font:inherit}
 button{cursor:pointer}
 /* 목업 전용 바 */
 .mock{position:sticky;top:0;z-index:40;background:#fffbe6;border-bottom:1px solid #f0e2a8;padding:8px 16px;display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:12px}
 .mock b{margin-right:4px}
-.mock a,.mock button{border:1px solid #d9c66a;background:#fff;border-radius:6px;padding:5px 10px;color:#333;text-decoration:none}
+.mock a,.mock button{border:1px solid #d9c66a;background:#fff;border-radius:4px;padding:5px 10px;color:#333;text-decoration:none}
 .mock .on{background:#191f28;color:#fff;border-color:#191f28}
 .mock .sep{width:1px;height:18px;background:#e2d39a;margin:0 4px}
 .mock .opts{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
-.mock label{display:flex;gap:4px;align-items:center;background:#fff;border:1px solid #e8dca6;border-radius:6px;padding:4px 8px}
+.mock label{display:flex;gap:4px;align-items:center;background:#fff;border:1px solid #e8dca6;border-radius:4px;padding:4px 8px}
 /* 홈페이지 공통 */
 .gnb{background:#fff;border-bottom:1px solid var(--line);height:52px;display:flex;align-items:center;padding:0 max(16px,calc(50% - 560px));gap:22px}
 .gnb .logo{font-weight:900;font-size:19px;letter-spacing:.3px}
 .gnb .logo sup{font-size:9px;background:#111;color:#fff;border-radius:8px;padding:1px 5px;vertical-align:4px;margin-left:3px}
-.gnb span{color:#4e5968;font-size:13px}
+.gnb span{color:#4D4D4D;font-size:13px}
 .gnb .r{margin-left:auto;display:flex;gap:12px;align-items:center}
 .gnb .av{width:28px;height:28px;border-radius:50%;background:#d9d6f5}
 .page-title{text-align:center;font-size:20px;font-weight:700;margin:30px 0 18px}
-.card{background:#fff;border:1px solid var(--line);border-radius:10px;max-width:600px;margin:0 auto 60px;padding:24px 14px}
+.card{background:#fff;border:1px solid var(--line);border-radius:4px;max-width:600px;margin:0 auto 60px;padding:24px 14px}
 .hero{text-align:center;padding:6px 0 18px}
 .hero .ic{width:34px;height:34px;border-radius:50%;margin:0 auto 10px;display:flex;align-items:center;justify-content:center;color:#fff;background:var(--blue);font-weight:700}
 .hero .ic.dash{background:#fff;border:2px dashed var(--blue);color:var(--blue)}
-.hero h2{font-size:18px;margin:0 0 6px}
+.hero h2{font-size:22px;font-weight:800;margin:0 0 6px}
 .hero p{margin:0;color:#333;font-size:13px;line-height:1.6}
-.outline-btn{display:block;width:100%;border:1px solid var(--line);background:#fff;border-radius:6px;padding:11px;font-size:13px}
+.outline-btn{display:block;width:100%;border:1px solid var(--line);background:#fff;border-radius:4px;padding:11px;font-size:13px}
 .blk{border-top:8px solid var(--gray);padding:22px 18px 18px;margin:0 -14px}
-.blk h3{font-size:16px;margin:0 0 6px;display:flex;align-items:center;gap:8px}
+.blk h3{font-size:16px;font-weight:700;line-height:22px;margin:0 0 6px;display:flex;align-items:center;gap:8px}
 .blk .desc{color:var(--sub);font-size:12.5px;margin:0 0 12px;line-height:1.6}
-.row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #f1f3f5;font-size:13px}
+.row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #F0F0F0;font-size:13px}
 .row:last-child{border-bottom:0}
 .row .k{font-weight:600}
 .row .v{color:#333;text-align:right}
 .red,.row .v.red{color:var(--red)}
 .blue,.row .v.blue{color:var(--blue)}
-.folded{background:var(--gray);border-radius:6px;color:var(--sub);text-align:center;padding:14px;font-size:12px}
+.folded{background:var(--gray);border-radius:4px;color:var(--sub);text-align:center;padding:14px;font-size:12px}
 .radio{display:flex;justify-content:space-between;align-items:flex-start;padding:10px 0}
 .radio .l{display:flex;gap:8px}
 .radio .chip{border:1px solid var(--line);border-radius:4px;font-size:11px;padding:1px 6px;margin-left:6px}
@@ -54,16 +54,16 @@ button{cursor:pointer}
 .dot{width:16px;height:16px;border-radius:50%;border:1.5px solid #555;margin-top:2px;flex:none}
 .dot.on{border:5px solid #111}
 .check{display:flex;gap:8px;align-items:flex-start;cursor:pointer;font-size:13.5px;font-weight:600;line-height:1.5}
-.check input{width:16px;height:16px;margin:2px 0 0;accent-color:#111;flex:none}
-.graybox{background:var(--gray);border-radius:6px;padding:12px 14px;font-size:12px;color:#4e5968;line-height:1.7;margin-top:10px}
-.graybox .t{color:#8b95a1}
-.paybtn{width:100%;border:0;border-radius:6px;background:var(--black);color:#fff;font-weight:700;font-size:15px;padding:15px;margin-top:12px}
-.paybtn:disabled{background:#9e9e9e;cursor:not-allowed}
+.check input{width:16px;height:16px;margin:2px 0 0;accent-color:#000;flex:none}
+.graybox{background:#F7F7F7;border-radius:4px;padding:12px 14px;font-size:12px;color:#4D4D4D;line-height:1.7;margin-top:10px}
+.graybox .t{color:#999999}
+.paybtn{width:100%;border:0;border-radius:4px;background:var(--black);color:#fff;font-weight:500;font-size:15px;padding:15px;margin-top:12px}
+.paybtn:disabled{background:#999999;cursor:not-allowed}
 .cancel{display:block;text-align:center;color:var(--red);text-decoration:underline;font-size:13px;margin-top:16px}
-.cancel.gray{color:#4e5968}
+.cancel.gray{color:#4D4D4D}
 .tbl{width:100%;border-collapse:collapse;font-size:12px}
-.tbl th{background:#f2f6fc;text-align:left;padding:9px 8px;font-weight:600}
-.tbl td{padding:9px 8px;border-bottom:1px solid #f1f3f5;color:#4e5968}
+.tbl th{background:#F7F7F7;text-align:left;padding:9px 8px;font-weight:600}
+.tbl td{padding:9px 8px;border-bottom:1px solid #F0F0F0;color:#4D4D4D}
 /* NEW 영역 */
 .new{position:relative;outline:2px dashed var(--blue);outline-offset:-2px;border-radius:4px}
 .new-tag{position:absolute;top:8px;right:10px;font-size:10px;font-weight:700;background:var(--blue);color:#fff;border-radius:3px;padding:2px 6px}
@@ -74,27 +74,28 @@ button{cursor:pointer}
 .f{margin-top:14px}
 .f label{display:block;font-size:12.5px;font-weight:600;margin-bottom:6px}
 .f label i{color:var(--red);font-style:normal;margin-left:2px}
-.f input[type=text],.f input[type=email]{width:100%;border:1px solid transparent;background:var(--gray);border-radius:6px;padding:12px;outline:0;font-size:13.5px}
-.f input:focus{border-color:var(--blue);background:#fff}
-.f input.err{border-color:var(--red);background:#fff}
-.f .help{font-size:11.5px;color:#8b95a1;margin-top:5px}
-.f .msg{font-size:11.5px;color:var(--red);margin-top:5px;display:none}
+.f input[type=text],.f input[type=email]{width:100%;border:1px solid transparent;background:var(--gray);border-radius:4px;padding:13px 14px;outline:0;font-size:14px;color:#000}
+.f input::placeholder{color:#666}
+.f input:focus{border-color:#000;background:var(--gray)}
+.f input.err{border-color:var(--red);background:var(--gray)}
+.f .help{font-size:12px;color:#666;margin-top:6px}
+.f .msg{font-size:12px;color:var(--red);margin-top:6px;display:none}
 .f .msg.show{display:block}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .two .f{margin-top:14px}
-.upload{border:1.5px dashed #c5ccd3;border-radius:6px;text-align:center;padding:16px;cursor:pointer;color:#333;font-size:13px}
-.upload small{display:block;color:#8b95a1;font-size:11.5px;margin-top:3px}
-.filechip{display:none;justify-content:space-between;align-items:center;background:var(--gray);border-radius:6px;padding:11px 12px;font-size:13px}
-.filechip a{color:#8b95a1;font-size:12px;cursor:pointer}
+.upload{border:1px dashed #CCCCCC;background:#F7F7F7;border-radius:4px;text-align:center;padding:16px;cursor:pointer;color:#333;font-size:13px}
+.upload small{display:block;color:#999999;font-size:11.5px;margin-top:3px}
+.filechip{display:none;justify-content:space-between;align-items:center;background:#F7F7F7;border-radius:4px;padding:11px 12px;font-size:13px}
+.filechip a{color:#999999;font-size:12px;cursor:pointer}
 .saved .row .v{max-width:62%}
-.done-note{background:var(--blue-soft);color:#1b64da;border-radius:6px;padding:11px 12px;font-size:12.5px;margin-top:12px}
-.toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%);background:#191f28;color:#fff;border-radius:8px;padding:11px 16px;font-size:13px;display:none;z-index:60;max-width:90%}
+.done-note{background:#F7F7F7;color:#000;border-radius:4px;padding:11px 12px;font-size:12.5px;margin-top:12px}
+.toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%);background:#191f28;color:#fff;border-radius:4px;padding:11px 16px;font-size:13px;display:none;z-index:60;max-width:90%}
 /* 기획 메모 */
 .spec{max-width:600px;margin:-30px auto 60px;background:#fff;border-top:4px solid var(--spec);border-radius:8px;padding:18px 20px;line-height:1.7;font-size:13px}
 .spec h4{margin:0 0 4px;color:var(--spec);font-size:15px}
 .spec h5{margin:14px 0 2px;font-size:13.5px;display:flex;gap:6px;align-items:center}
 .spec ul{margin:0;padding-left:18px}
-.spec .q{background:var(--spec-soft);border-radius:6px;padding:10px 14px;margin-top:12px}
+.spec .q{background:var(--spec-soft);border-radius:4px;padding:10px 14px;margin-top:12px}
 .screen{display:none}
 .screen.on{display:block}
 footer{background:#000;color:#bbb;font-size:12px;padding:28px max(16px,calc(50% - 560px));line-height:1.8}
@@ -105,6 +106,18 @@ footer b{color:#fff;font-size:17px;display:block;margin-bottom:6px}
   .two{grid-template-columns:1fr}
   .spec{margin-top:-30px;border-radius:0}
 }
+
+/* ===== OCREO 디자인 시스템 맞춤 (Figma OCREO 디자인 Foundation 기준) ===== */
+@font-face{font-family:'NanumSquare Neo';font-weight:300;font-display:swap;src:url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.woff) format('woff')}
+@font-face{font-family:'NanumSquare Neo';font-weight:400;font-display:swap;src:url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.woff) format('woff')}
+@font-face{font-family:'NanumSquare Neo';font-weight:500;font-display:swap;src:url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.woff) format('woff')}
+@font-face{font-family:'NanumSquare Neo';font-weight:600;font-display:swap;src:url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.woff) format('woff')}
+@font-face{font-family:'NanumSquare Neo';font-weight:700;font-display:swap;src:url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.woff) format('woff')}
+@font-face{font-family:'NanumSquare Neo';font-weight:800;font-display:swap;src:url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.woff) format('woff')}
+@font-face{font-family:'NanumSquare Neo';font-weight:900;font-display:swap;src:url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-eHv.woff) format('woff')}
+
+body,input,button{font-family:'NanumSquare Neo',-apple-system,'Apple SD Gothic Neo',sans-serif}
+.check{font-weight:700}
 </style>
 </head>
 <body>
@@ -155,7 +168,7 @@ footer b{color:#fff;font-size:17px;display:block;margin-bottom:6px}
       <table class="tbl"><tr><th>행사 개최일 기준(D-Day)</th><th>기간</th><th>취소 해약금</th></tr>
         <tr><td>행사 개최 181일 전까지</td><td>~ 2027-02-01</td><td>해약금 없음</td></tr>
         <tr><td>180일 ~ 121일 전</td><td>2027-02-02 ~ 2027-04-02</td><td>부스비의 20%</td></tr>
-        <tr><td colspan="3" style="text-align:center;color:#8b95a1">이하 지금 화면과 같음</td></tr></table>
+        <tr><td colspan="3" style="text-align:center;color:#999999">이하 지금 화면과 같음</td></tr></table>
     </div>
 
     <div class="blk new" id="dep-tax"></div>
@@ -165,7 +178,7 @@ footer b{color:#fff;font-size:17px;display:block;margin-bottom:6px}
       <label class="check"><input type="checkbox" id="dep-agree3"> 결제 대행을 위한 개인정보 제3자 제공에 동의합니다. (필수)</label>
       <div class="graybox"><span class="t">제3자 제공 내역</span><br>제공받는 자 : 토스페이먼츠(주)<br>제공 항목 : 주문번호 · 결제 금액 · 결제 수단 · 성명 · 연락처 · 이메일<br>제공 목적 : 결제 처리, 결제 내역 확인, 환불 처리<br>보유 기간 : 관계 법령에 따른 보존 기간</div>
       <p class="desc" style="margin:12px 0 0">퀵계좌이체로 결제됩니다. 결제하기를 누르면 토스 결제창이 열립니다.</p>
-      <div style="margin-top:12px;font-size:12px;color:#8b95a1;display:flex;gap:6px;align-items:center"><span class="pin">3</span>세금계산서를 신청하면 입력 항목과 동의가 모두 채워져야 결제하기가 활성화됨</div>
+      <div style="margin-top:12px;font-size:12px;color:#999999;display:flex;gap:6px;align-items:center"><span class="pin">3</span>세금계산서를 신청하면 입력 항목과 동의가 모두 채워져야 결제하기가 활성화됨</div>
       <button class="paybtn" id="dep-pay" disabled>1,232,000원 결제하기</button>
       <a class="cancel gray">신청 취소</a>
     </div>
